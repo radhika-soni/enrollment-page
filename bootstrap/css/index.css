@@ -1,0 +1,13 @@
+body {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.form-link {
+    display: flex;
+    justify-content: right;
+    margin-right: 30px;
+}
