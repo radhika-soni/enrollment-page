@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
         $p = 0;
         for($i=0;$i<count($Arts);$i++){
             $sql2 = "select sub_type,sub_fees from subject_info where id='$Arts[$i]'";
-            $sub_info = mysqli_query($con,$sql2);
+            $sub_info = mysqli_query($con,$sql2) or die(mysqli_error($con));
             if(mysqli_num_rows($sub_info)>0){
                 $res = mysqli_fetch_assoc($sub_info);
                 if($res['sub_type']=='T'){
@@ -130,7 +130,7 @@ if(isset($_POST['submit'])){
     }?>
     <div id="subjects" >
     <?php
-    $subjects = mysqli_query($con,$sql);
+    $subjects = mysqli_query($con,$sql) or die(mysqli_error($con));
     if(mysqli_num_rows($subjects)>0){
         $value = 0;
         while($sub=mysqli_fetch_assoc($subjects)){
